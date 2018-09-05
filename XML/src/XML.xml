@@ -1,24 +1,47 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE filmlijst [
-        <!ELEMENT filmlijst (film+)>
-        <!ELEMENT film (titel, hoofdrol, jaar)>
-        <!ELEMENT titel (#PCDATA) >
-        <!ELEMENT hoofdrol (#PCDATA)>
-        <!ELEMENT jaar (#PCDATA)>
-        <!ATTLIST film categorie (heel_goed|goed|slecht) #REQUIRED>
-        <!ATTLIST film land CDATA "België">
+<!DOCTYPE bestelbon [
+        <!ELEMENT bestelbon (naam, adres, datum, producten, berekening)>
+        <!ELEMENT naam (#PCDATA)>
+        <!ELEMENT adres (straat, nr, postcode) >
+        <!ELEMENT straat (#PCDATA)>
+        <!ELEMENT nr (#PCDATA)>
+        <!ELEMENT postcode (#PCDATA)>
+        <!ELEMENT datum (#PCDATA)>
+        <!ELEMENT producten (product+)>
+        <!ELEMENT product (aantal, EP, prijs)>
+        <!ATTLIST product code ID #REQUIRED>
+        <!ELEMENT aantal (#PCDATA)>
+        <!ELEMENT EP (#PCDATA)>
+        <!ELEMENT prijs (#PCDATA)>
+        <!ELEMENT berekening (excl, BTW, incl)>
+        <!ELEMENT excl (#PCDATA)>
+        <!ELEMENT BTW (#PCDATA)>
+        <!ELEMENT incl (#PCDATA)>
         ]>
 
-<filmlijst>
-    <film categorie="heel_goed" land="USA">
-        <titel>The Shawshank Redemption</titel>
-        <hoofdrol>Tim Robbins</hoofdrol>
-        <jaar>2014</jaar>
-    </film>
-
-    <film categorie="goed" land="USA">
-        <titel>Inception </titel>
-        <hoofdrol>Leonardo Dicaprio</hoofdrol>
-        <jaar>2010</jaar>
-    </film>
-</filmlijst>
+<bestelbon>
+    <naam>Joske Vermeulen</naam>
+    <adres>
+        <straat>Trammesantlei</straat>
+        <nr>122</nr>
+        <postcode>2900 Schoten</postcode>
+    </adres>
+    <datum>23/12/2005</datum>
+    <producten>
+        <product code="AE-35">
+            <aantal>1</aantal>
+            <EP>20</EP>
+            <prijs>20</prijs>
+        </product>
+        <product code="HAL-9000">
+            <aantal>2</aantal>
+            <EP>10000</EP>
+            <prijs>20000</prijs>
+        </product>
+    </producten>
+    <berekening>
+        <excl>20020</excl>
+        <BTW>4204,2</BTW>
+        <incl>24224,2</incl>
+    </berekening>
+</bestelbon>
