@@ -1,32 +1,24 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE familie [
-        <!ELEMENT familie ANY>
-        <!ELEMENT vader (voornaam, achternaam)>
-        <!ELEMENT moeder (voornaam, achternaam)>
-        <!ELEMENT kinderen (kind+)>
-        <!ELEMENT kind (voornaam, achternaam)>
-        <!ELEMENT voornaam (#PCDATA)>
-        <!ELEMENT achternaam (#PCDATA)>
-        <!ENTITY achternaam "Vermeulen">
+<!DOCTYPE filmlijst [
+        <!ELEMENT filmlijst (film+)>
+        <!ELEMENT film (titel, hoofdrol, jaar)>
+        <!ELEMENT titel (#PCDATA) >
+        <!ELEMENT hoofdrol (#PCDATA)>
+        <!ELEMENT jaar (#PCDATA)>
+        <!ATTLIST film categorie (heel_goed|goed|slecht) #REQUIRED>
+        <!ATTLIST film land CDATA "België">
         ]>
 
-<familie>
-    <vader>
-        <voornaam>Jos</voornaam>
-        <achternaam>&achternaam;</achternaam>
-    </vader>
-    <moeder>
-        <voornaam>Marie</voornaam>
-        <achternaam>&achternaam;</achternaam>
-    </moeder>
-    <kinderen>
-        <kind>
-            <voornaam>Joske</voornaam>
-            <achternaam>&achternaam;</achternaam>
-        </kind>
-        <kind>
-            <voornaam>Marieke</voornaam>
-            <achternaam>&achternaam;</achternaam>
-        </kind>
-    </kinderen>
-</familie>
+<filmlijst>
+    <film categorie="heel_goed" land="USA">
+        <titel>The Shawshank Redemption</titel>
+        <hoofdrol>Tim Robbins</hoofdrol>
+        <jaar>2014</jaar>
+    </film>
+
+    <film categorie="goed" land="USA">
+        <titel>Inception </titel>
+        <hoofdrol>Leonardo Dicaprio</hoofdrol>
+        <jaar>2010</jaar>
+    </film>
+</filmlijst>
