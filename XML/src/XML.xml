@@ -1,47 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE bestelbon [
-        <!ELEMENT bestelbon (naam, adres, datum, producten, berekening)>
-        <!ELEMENT naam (#PCDATA)>
-        <!ELEMENT adres (straat, nr, postcode) >
-        <!ELEMENT straat (#PCDATA)>
-        <!ELEMENT nr (#PCDATA)>
-        <!ELEMENT postcode (#PCDATA)>
-        <!ELEMENT datum (#PCDATA)>
-        <!ELEMENT producten (product+)>
-        <!ELEMENT product (aantal, EP, prijs)>
-        <!ATTLIST product code ID #REQUIRED>
-        <!ELEMENT aantal (#PCDATA)>
-        <!ELEMENT EP (#PCDATA)>
-        <!ELEMENT prijs (#PCDATA)>
-        <!ELEMENT berekening (excl, BTW, incl)>
-        <!ELEMENT excl (#PCDATA)>
-        <!ELEMENT BTW (#PCDATA)>
-        <!ELEMENT incl (#PCDATA)>
-        ]>
-
-<bestelbon>
-    <naam>Joske Vermeulen</naam>
-    <adres>
-        <straat>Trammesantlei</straat>
-        <nr>122</nr>
-        <postcode>2900 Schoten</postcode>
-    </adres>
-    <datum>23/12/2005</datum>
-    <producten>
-        <product code="AE-35">
-            <aantal>1</aantal>
-            <EP>20</EP>
-            <prijs>20</prijs>
-        </product>
-        <product code="HAL-9000">
-            <aantal>2</aantal>
-            <EP>10000</EP>
-            <prijs>20000</prijs>
-        </product>
-    </producten>
-    <berekening>
-        <excl>20020</excl>
-        <BTW>4204,2</BTW>
-        <incl>24224,2</incl>
-    </berekening>
-</bestelbon>
+<namen xmlns="http://www.betavzw.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.betavzw.org XSD.xsd">
+    <naam>
+        <voornaam>Karen</voornaam>
+        <achternaam>Damen</achternaam>
+        <geboortedatum nationaliteit="B">1974-10-28</geboortedatum>
+    </naam>
+    <naam>
+        <voornaam>Kristel</voornaam>
+        <achternaam>Verbeke</achternaam>
+        <geboortedatum nationaliteit="B">1975-12-10</geboortedatum>
+    </naam>
+    <naam>
+        <voornaam>Kathleen</voornaam>
+        <achternaam>Aerts</achternaam>
+        <geboortedatum nationaliteit="B">1978-06-18</geboortedatum>
+    </naam>
+</namen>
