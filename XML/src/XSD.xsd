@@ -1,22 +1,56 @@
-<xs:schema xmlns="http://www.beta.ua.ac.be" xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           targetNamespace="http://www.beta.ua.ac.be" elementFormDefault="qualified" attributeFormDefault="unqualified">
-    <xs:element name="producten">
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns="http://beta.ua.ac.be/boeken" xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://beta.ua.ac.be/boeken" elementFormDefault="qualified">
+    <xs:element name="boeken">
         <xs:complexType>
             <xs:sequence>
-                <xs:element name="product" minOccurs="1" maxOccurs="unbounded">
+                <xs:element name="boek">
                     <xs:complexType>
                         <xs:sequence>
-                            <xs:element name="titel" type="xs:string"></xs:element>
-                            <xs:element name="auteur" type="xs:string"></xs:element>
-                            <xs:element name="prijs">
+
+                            <xs:element name="jaartal" type="xs:gYear" default="2000"></xs:element>
+
+                            <xs:element name="titel">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="1"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="beoorderling">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="heel goed"></xs:enumeration>
+                                        <xs:enumeration value="slecht"></xs:enumeration>
+                                        <xs:enumeration value="goed"></xs:enumeration>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+
+                            <xs:element name="auteurs">
                                 <xs:complexType>
-                                    <xs:simpleContent>
-                                        <xs:extension base="xs:double">
-                                            <xs:attribute name="valuta" type="xs:string" default="EUR"></xs:attribute>
-                                        </xs:extension>
-                                    </xs:simpleContent>
+                                    <xs:sequence>
+                                        <xs:element name="auteur">
+                                            <xs:complexType>
+                                                <xs:simpleContent>
+                                                    <xs:extension base="xs:string">
+                                                        <xs:attribute name="geslacht" use="required">
+                                                            <xs:simpleType>
+                                                                <xs:restriction base="xs:string">
+                                                                    <xs:enumeration value="v"/>
+                                                                    <xs:enumeration value="m"/>
+                                                                </xs:restriction>
+                                                            </xs:simpleType>
+                                                        </xs:attribute>
+                                                    </xs:extension>
+                                                </xs:simpleContent>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
                                 </xs:complexType>
                             </xs:element>
+
                         </xs:sequence>
                     </xs:complexType>
                 </xs:element>
