@@ -1,19 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<namen xmlns="http://www.betavzw.org" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.betavzw.org XSD.xsd">
-    <naam>
-        <voornaam>Karen</voornaam>
-        <achternaam>Damen</achternaam>
-        <geboortedatum nationaliteit="B">1974-10-28</geboortedatum>
-    </naam>
-    <naam>
-        <voornaam>Kristel</voornaam>
-        <achternaam>Verbeke</achternaam>
-        <geboortedatum nationaliteit="B">1975-12-10</geboortedatum>
-    </naam>
-    <naam>
-        <voornaam>Kathleen</voornaam>
-        <achternaam>Aerts</achternaam>
-        <geboortedatum nationaliteit="B">1978-06-18</geboortedatum>
-    </naam>
-</namen>
+<lokaal xmlns="http://www.beta.ua.ac.be">
+    <pc nr="1">
+        <cursist>Benson</cursist>
+        <cursist>Koen</cursist>
+    </pc>
+    <pc nr="2">
+        <cursist>Ines</cursist>
+        <cursist>Mo</cursist>
+    </pc>
+</lokaal>
